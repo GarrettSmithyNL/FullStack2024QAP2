@@ -1,27 +1,83 @@
 const http = require("http");
 const fs = require("fs");
 const path = require("path");
+const { getSystemErrorMap } = require("util");
 global.DEBUG = true;
 
 const server = http.createServer((request, response) => {
-  if (DEBUG) console.log("Requested URL: " + request.url);
+  if (DEBUG) {
+    if (request.url == "/favicon.ico") {
+    } else {
+      console.log("Requested URL: " + request.url);
+    }
+  }
   response.statusCode = 200;
-  response.setHeader("Content-Type", "text/plain");
   switch (request.url) {
     case "/":
-      response.end("You are on home page.");
+    case "/home":
+      fs.readFile("./views/home.html", "utf8", (error, data) => {
+        if (error) {
+          if (DEBUG) console.log(error);
+          response.statusCode = 500;
+          response.end("Error getting file!");
+        } else {
+          response.setHeader("Content-Type", "text/html");
+          response.write(data);
+          response.end();
+        }
+      });
       break;
     case "/about":
-      response.end("You are on about page.");
+      fs.readFile("./views/about.html", "utf8", (error, data) => {
+        if (error) {
+          if (DEBUG) console.log(error);
+          response.statusCode = 500;
+          response.end("Error getting file!");
+        } else {
+          response.setHeader("Content-Type", "text/html");
+          response.write(data);
+          response.end();
+        }
+      });
       break;
     case "/contact":
-      response.end("You are on contact page.");
+      fs.readFile("./views/contact.html", "utf8", (error, data) => {
+        if (error) {
+          if (DEBUG) console.log(error);
+          response.statusCode = 500;
+          response.end("Error getting file!");
+        } else {
+          response.setHeader("Content-Type", "text/html");
+          response.write(data);
+          response.end();
+        }
+      });
       break;
     case "/products":
-      response.end("You are on products page.");
+      fs.readFile("./views/products.html", "utf8", (error, data) => {
+        if (error) {
+          if (DEBUG) console.log(error);
+          response.statusCode = 500;
+          response.end("Error getting file!");
+        } else {
+          response.setHeader("Content-Type", "text/html");
+          response.write(data);
+          response.end();
+        }
+      });
       break;
     case "/subscribe":
-      response.end("You are on subscribe page.");
+      fs.readFile("./views/subscribe.html", "utf8", (error, data) => {
+        if (error) {
+          if (DEBUG) console.log(error);
+          response.statusCode = 500;
+          response.end("Error getting file!");
+        } else {
+          response.setHeader("Content-Type", "text/html");
+          response.write(data);
+          response.end();
+        }
+      });
       break;
     default:
       response.end("You are on no page.");
