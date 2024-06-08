@@ -1,0 +1,19 @@
+{
+  "name": "qap3",
+  "version": "1.0.0",
+  "description": "QAP3 - FullStack 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarrettSmithyNL/FullStack2024QAP3.git"
+  },
+  "author": "Garrett Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GarrettSmithyNL/FullStack2024QAP3/issues"
+  },
+  "homepage": "https://github.com/GarrettSmithyNL/FullStack2024QAP3#readme"
+}
