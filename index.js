@@ -1,6 +1,6 @@
 const http = require("http");
 
-const reader = require("./file");
+const director = require("./director.js");
 
 const myEmitter = require("./emitter.js");
 
@@ -19,32 +19,30 @@ const server = http.createServer((request, response) => {
   switch (request.url) {
     case "/":
     case "/home":
-      reader.readFile("./views/home.html", response);
+      director.readFile("./views/home.html", response);
       myEmitter.emit("event", "EVENT", "User entered the HOME page");
       break;
     case "/about":
-      reader.readFile("./views/about.html", response);
+      director.readFile("./views/about.html", response);
       myEmitter.emit("event", "EVENT", "User entered the ABOUT page");
       break;
     case "/contact":
-      reader.readFile("./views/contact.html", response);
+      director.readFile("./views/contact.html", response);
       myEmitter.emit("event", "EVENT", "User entered the CONTACT page");
       break;
     case "/products":
-      reader.readFile("./views/products.html", response);
+      director.readFile("./views/products.html", response);
       myEmitter.emit("event", "EVENT", "User entered the PRODUCTS page");
       break;
     case "/subscribe":
-      reader.readFile("./views/subscribe.html", response);
+      director.readFile("./views/subscribe.html", response);
       myEmitter.emit("event", "EVENT", "User entered the SUBSCRIBE page");
       break;
     case "/favicon.ico":
       break;
     default:
+      director.redirect("/", response);
       myEmitter.emit("error", "ERROR", "User entered a unknown path");
-      response.statusCode = 302;
-      response.setHeader("location", "/");
-      response.end();
       break;
   }
 });

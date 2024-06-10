@@ -14,4 +14,10 @@ const readFile = (path, response) => {
   });
 };
 
-module.exports = { readFile };
+const redirect = (path, response) => {
+  response.statusCode = 302;
+  response.setHeader("location", path);
+  response.end();
+};
+
+module.exports = { readFile, redirect };
