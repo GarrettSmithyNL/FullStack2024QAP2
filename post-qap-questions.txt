@@ -1,0 +1,19 @@
+1.) This QAP took me 5 hours to complete.
+2.) I used w3school for syntax, and copilot for specific quesitons
+3.) No, I didnt ask any classmates for help.
+4.) No, I didnt ask Peter any questions.
+5.) Problem 1:
+      This was a 1.5 out of 5 in difficulty, would be able to do this again.
+    Problem 2:
+      This was a 1 out of 5 in difficulty, would be able to do this again.
+    Problem 3:
+      This was a 3 out of 5 in difficulty, had some bugs in my emitter. Would
+      be able to do this again. 
+    Bonus:
+      Creating the disk log:
+        This was a 3 out of 5 in difficulty, would be able to do this again.
+      Useful Data:
+        Didnt do this story.
+      Routes on HTML:
+        This was a 0 out of 5 in difficulty, HTML works real well with node.
+        Would be able to do this again.
